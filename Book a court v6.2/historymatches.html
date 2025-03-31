@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Match History</title>
+    <link rel="stylesheet" href="history_matches.css">
+</head>
+<body>
+<header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Main Page</a></li>
+                <li><a href="friends.html">Friends</a></li>
+                <li><a href="bookcourt.html">Book a Court</a></li>
+                <li><a href="historymatches.html">History Matches</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="matchmaking.html">Matchmaking</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Match History</h1>
+    <div class="filters">
+        <label for="dateFilter">Filter by Date:</label>
+        <input type="date" id="dateFilter" placeholder="YYYY-MM-DD">
+        
+        <label for="playerFilter">Filter by Player Name:</label>
+        <input type="text" id="playerFilter" placeholder="player name">
+        
+        <label for="winnerFilter">Filter by Winner:</label>
+        <input type="text" id="winnerFilter" placeholder="winner name">
+		
+		<label for="CourtFilter">Filter by Court:</label>
+        <input type="text" id="CourtFilter" placeholder="court name">
+    </div>
+	<div class="Buttons">
+		<button onclick="search()">Search</button>
+		<button onclick="reset()">Reset</button>
+	</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Player 1</th>
+                <th>Player 2</th>
+                <th>Result</th>
+                <th>Winner</th>
+                <th>Court Name</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2024-02-10</td>
+                <td>14:30</td>
+                <td>Hassan</td>
+                <td>Nayef</td>
+                <td>6-4, 3-6, 7-5</td>
+                <td>Hassan</td>
+                <td>City Court</td>
+                <td>London</td>
+            </tr>
+            <tr>
+                <td>2024-01-20</td>
+                <td>16:00</td>
+                <td>Saqr</td>
+                <td>Hassan</td>
+                <td>7-6, 6-3</td>
+                <td>Saqr</td>
+                <td>Public Court</td>
+                <td>United Kingdom</td>
+            </tr>
+        </tbody>
+    </table>
+	<div class="Navigator">
+	<label for="rowCount">Show Rows:</label>
+    <select id="rowCount" onchange="updateTable()">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="all">All</option>
+    </select>
+	<div class="pagination">
+        <button onclick="prevPage()">&#8592; Previous</button>
+        <span id="pageInfo">Page 1</span>
+        <button onclick="nextPage()">Next &#8594;</button>
+    </div>
+	</div>
+	<footer>
+        <p>&copy; 2025 Website_Name. All Rights Reserved.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
