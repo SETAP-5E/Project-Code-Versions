@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchmaking</title>
+    <link rel="stylesheet" href="Match_making.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Main Page</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="bookcourt.html">Book a Court</a></li>
+            <li><a href="historymatches.html">History Matches</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="matchmaking.html">Matchmaking</a></li>
+        </ul>
+    </nav>
+</header>
+<h1>Matchmaking</h1>
+<div class="filters">
+    <label for="filterId">Filter by ID:</label>
+    <input type="number" id="filterId" placeholder="Player ID">
+    
+    <label for="filterName">Filter by Name:</label>
+    <input type="text" id="filterName" placeholder="Player name">
+    
+    <label for="filterGender">Filter by Gender:</label>
+    <select id="filterGender">
+        <option value="">All Genders</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    
+    <label for="filterStrength">Filter by Strength:</label>
+    <select id="filterStrength">
+        <option value="">All Strengths</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+</div>
+<div class="Buttons">
+    <button onclick="filterTable()">Search</button>
+    <button onclick="resetFilters()">Reset</button>
+    <button onclick="ChooseRandom()">Random</button>
+</div>
+<button onclick="ChooseSelected()">Choose Selected</button>
+<table>
+    <thead>
+        <tr>
+            <th>Select</th>
+            <th>Player ID</th>
+            <th>Name</th>
+            <th>Strength</th>
+            <th>Winning Matches</th>
+            <th>Lost Matches</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="radio" name="playerSelection"></td>
+            <td>1</td>
+            <td>Hassan</td>
+            <td>9</td>
+            <td>20</td>
+            <td>4</td>
+            <td>26</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="playerSelection"></td>
+            <td>5</td>
+            <td>Hamad</td>
+            <td>7</td>
+            <td>12</td>
+            <td>3</td>
+            <td>23</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="playerSelection"></td>
+            <td>3</td>
+            <td>Nayef</td>
+            <td>10</td>
+            <td>25</td>
+            <td>2</td>
+            <td>23</td>
+            <td>Male</td>
+        </tr>
+    </tbody>
+</table>
+<div class="Navigator">
+    <label for="rowCount">Show Rows:</label>
+    <select id="rowCount" onchange="updateTable()">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="all">All</option>
+    </select>
+
+    <div class="pagination">
+        <button onclick="prevPage()">&#8592; Previous</button>
+        <span id="pageInfo">Page 1</span>
+        <button onclick="nextPage()">Next &#8594;</button>
+    </div>
+</div>
+
+
+
+
+<footer>
+    <p>&copy; 2025 Website_Name. All Rights Reserved.</p>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>

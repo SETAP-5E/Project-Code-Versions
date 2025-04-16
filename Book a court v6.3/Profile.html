@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+  <link rel="stylesheet" href="Profile.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Main Page</a></li>
+        <li><a href="friends.html">Friends</a></li>
+        <li><a href="bookcourt.html">Book a Court</a></li>
+        <li><a href="historymatches.html">History Matches</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="matchmaking.html">Matchmaking</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Your Profile</h1>
+
+  <form id="profileForm" class="profile-container">
+    <!-- Profile Photo Section with Stats -->
+<div class="profile-photo-section">
+    <img id="profilePreview" src="user_image.jpg" alt="Profile Photo" />
+    <br />
+    <input type="file" id="profilePhoto" accept="image/*" />
+  
+    <div class="player-stats">
+      <p><strong>Player ID:</strong> <span class="stat-value">77992115</span></p>
+      <p><strong>Strength:</strong></p>
+      <div class="stars">
+        ★★★★★★★★★☆ <span class="strength-label">(9 / 10)</span>
+      </div>
+      <p><strong>Winning Matches:</strong> <span class="stat-value">20</span></p>
+      <p><strong>Lost Matches:</strong> <span class="stat-value">4</span></p>
+    </div>
+  </div>
+  
+
+    <div class="profile-form-section">
+      <div>
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" value="77992115" disabled />
+      </div>
+
+      <div>
+        <label for="userName">Full Name:</label>
+        <input type="text" id="userName" value="Nayef Al Darwish" />
+      </div>
+
+      <div>
+        <label for="userBirthday">Birthday:</label>
+        <input type="date" id="userBirthday" name="userBirthday" />
+      </div>
+      <div>
+        <label for="userGender">Gender:</label>
+        <select id="userGender" name="userGender">
+          <option value="">Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      
+
+      <div>
+        <label for="userEmail">Email:</label>
+        <input type="email" id="userEmail" value="nayef@tennismail.com" />
+      </div>
+
+      <div>
+        <label for="userLocation">Location:</label>
+        <input type="text" id="userLocation" value="Doha, Qatar" />
+      </div>
+
+      <div class="form-group">
+        <label for="phone_number">Your Phone Number</label>
+        <div class="phone-group">
+            <div class="custom-dropdown">
+                <button type="button" id="selected-country" class="dropdown-btn">
+                    <img src="https://flagcdn.com/w40/us.png" class="flag-icon"> +1 (USA)
+                </button>
+                <div class="dropdown-content">
+                    <input type="text" id="search-country" placeholder="Search country..." class="dropdown-search">
+                    <div id="country-list">
+                        <div class="dropdown-item" data-code="+1" data-flag="us">🇺🇸 +1 (USA)</div>
+                        <div class="dropdown-item" data-code="+44" data-flag="gb">🇬🇧 +44 (UK)</div>
+                        <div class="dropdown-item" data-code="+91" data-flag="in">🇮🇳 +91 (India)</div>
+                        <div class="dropdown-item" data-code="+974" data-flag="qa">🇶🇦 +974 (Qatar)</div>
+                        <div class="dropdown-item" data-code="+33" data-flag="fr">🇫🇷 +33 (France)</div>
+                        <div class="dropdown-item" data-code="+49" data-flag="de">🇩🇪 +49 (Germany)</div>
+                        <div class="dropdown-item" data-code="+61" data-flag="au">🇦🇺 +61 (Australia)</div>
+                        <div class="dropdown-item" data-code="+81" data-flag="jp">🇯🇵 +81 (Japan)</div>
+                        <div class="dropdown-item" data-code="+86" data-flag="cn">🇨🇳 +86 (China)</div>
+                        <div class="dropdown-item" data-code="+55" data-flag="br">🇧🇷 +55 (Brazil)</div>
+                        <div class="dropdown-item" data-code="+7" data-flag="ru">🇷🇺 +7 (Russia)</div>
+                        <div class="dropdown-item" data-code="+27" data-flag="za">🇿🇦 +27 (South Africa)</div>
+                        <div class="dropdown-item" data-code="+34" data-flag="es">🇪🇸 +34 (Spain)</div>
+                        <div class="dropdown-item" data-code="+39" data-flag="it">🇮🇹 +39 (Italy)</div>
+                        <div class="dropdown-item" data-code="+82" data-flag="kr">🇰🇷 +82 (South Korea)</div>
+                        <div class="dropdown-item" data-code="+92" data-flag="pk">🇵🇰 +92 (Pakistan)</div>
+                        <div class="dropdown-item" data-code="+62" data-flag="id">🇮🇩 +62 (Indonesia)</div>
+                        <div class="dropdown-item" data-code="+966" data-flag="sa">🇸🇦 +966 (Saudi Arabia)</div>
+                    </div>
+                </div>
+            </div>
+            <input type="tel" id="phone_number" name="phone_number" placeholder="Enter phone number" required>
+            <input type="hidden" id="country_code" name="country_code" value="+1">
+        </div>
+    </div>
+
+      <div>
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" placeholder="Enter new password" />
+      </div>
+
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm new password" />
+      </div>
+
+      <div class="button-group">
+        <button type="submit">Update Profile</button>
+        <button type="button" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </form>
+
+<!-- Custom Modal -->
+<div id="customModal" class="modal-overlay">
+    <div class="modal-box">
+      <p id="modalMessage"></p>
+      <div id="modalActions" class="modal-buttons" style="margin-top: 20px;"></div>
+      <button id="closeModalBtn">Close</button>
+    </div>
+  </div>
+  
+  
+  <footer>
+    <p>&copy; 2025 Website_Name. All Rights Reserved.</p>
+  </footer>
+
+  <script src="Profile.js"></script>
+</body>
+</html>
