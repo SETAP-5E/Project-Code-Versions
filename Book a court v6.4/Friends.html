@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Friends</title>
+    <link rel="stylesheet" href="Friends.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Main Page</a></li>
+                <li><a href="Friends.html">Friends</a></li>
+                <li><a href="Book_a_court.html">Book a Court</a></li>
+                <li><a href="History_matches.html">History Matches</a></li>
+                <li><a href="Profile.html">Profile</a></li>
+                <li><a href="Match_making.html">Matchmaking</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<h1>Friends</h1>
+
+<!-- Filter Section -->
+<div class="filters">
+    <label for="filterId">Filter by Player ID:</label>
+    <input type="number" id="filterId" placeholder="Player ID">
+
+    <label for="filterName">Filter by Player Name:</label>
+    <input type="text" id="filterName" placeholder="Player Name">
+
+    <label for="filterLocation">Filter by Location:</label>
+    <input type="text" id="filterLocation" placeholder="Location">
+
+    <!-- Renamed the button to “Search” and gave it a new ID -->
+    <button id="searchFriendsBtn">Search</button>
+    <!-- New Reset button -->
+    <button id="resetFiltersBtn">Reset</button>
+</div>
+
+<!-- Friends Table -->
+<table>
+    <thead>
+        <tr>
+            <th>Player ID</th>
+            <th>Player Name</th>
+            <th>Location</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="friendsTableBody">
+        <!-- Example data; can be replaced or dynamically generated -->
+        <tr>
+            <td>101</td>
+            <td>Serena Williams</td>
+            <td>NY, USA</td>
+            <td><button>Add/Remove</button></td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Roger Federer</td>
+            <td>Basel, Switzerland</td>
+            <td><button>Add/Remove</button></td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>Rafael Nadal</td>
+            <td>Mallorca, Spain</td>
+            <td><button>Add/Remove</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="Navigator">
+    <label for="rowCount">Show Rows:</label>
+    <select id="rowCount">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="all">All</option>
+    </select>
+    <div class="pagination">
+        <button onclick="prevPage()">&#8592; Previous</button>
+        <span id="pageInfo">Page 1</span>
+        <button onclick="nextPage()">Next &#8594;</button>
+    </div>
+</div>
+
+<!-- Custom Modal -->
+<div id="customModal" class="modal-overlay">
+    <div class="modal-box">
+      <p id="modalMessage"></p>
+      <button id="closeModalBtn">Close</button>
+    </div>
+  </div>
+  
+
+<footer>
+    <p>&copy; 2025 Website_Name. All Rights Reserved.</p>
+</footer>
+
+<!-- Updated JS file reference -->
+<script src="app.js"></script>
+</body>
+</html>
