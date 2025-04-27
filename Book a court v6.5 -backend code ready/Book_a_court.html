@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Booking</title>
+	<link rel="stylesheet" href="Book_a_court.css">
+</head>
+<body>
+	<header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Main Page</a></li>
+                <li><a href="Friends.html">Friends</a></li>
+                <li><a href="Book_a_court.html">Book a Court</a></li>
+                <li><a href="History_matches.html">History Matches</a></li>
+                <li><a href="Profile.html">Profile</a></li>
+                <li><a href="Match_making.html">Matchmaking</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Book a Court</h1>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="FullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            
+			<div class="form-group">
+                <label for="phone_number">Your Phone Number</label>
+                <div class="phone-group">
+                    <div class="custom-dropdown">
+                        <button type="button" id="selected-country" class="dropdown-btn">
+                            <img src="https://flagcdn.com/w40/us.png" class="flag-icon"> +1 (USA)
+                        </button>
+                        <div class="dropdown-content">
+                            <input type="text" id="search-country" placeholder="Search country..." class="dropdown-search">
+                            <div id="country-list">
+                                <div class="dropdown-item" data-code="+1" data-flag="us">🇺🇸 +1 (USA)</div>
+                                <div class="dropdown-item" data-code="+44" data-flag="gb">🇬🇧 +44 (UK)</div>
+                                <div class="dropdown-item" data-code="+91" data-flag="in">🇮🇳 +91 (India)</div>
+                                <div class="dropdown-item" data-code="+974" data-flag="qa">🇶🇦 +974 (Qatar)</div>
+                                <div class="dropdown-item" data-code="+33" data-flag="fr">🇫🇷 +33 (France)</div>
+                                <div class="dropdown-item" data-code="+49" data-flag="de">🇩🇪 +49 (Germany)</div>
+                                <div class="dropdown-item" data-code="+61" data-flag="au">🇦🇺 +61 (Australia)</div>
+                                <div class="dropdown-item" data-code="+81" data-flag="jp">🇯🇵 +81 (Japan)</div>
+                                <div class="dropdown-item" data-code="+86" data-flag="cn">🇨🇳 +86 (China)</div>
+                                <div class="dropdown-item" data-code="+55" data-flag="br">🇧🇷 +55 (Brazil)</div>
+                                <div class="dropdown-item" data-code="+7" data-flag="ru">🇷🇺 +7 (Russia)</div>
+                                <div class="dropdown-item" data-code="+27" data-flag="za">🇿🇦 +27 (South Africa)</div>
+                                <div class="dropdown-item" data-code="+34" data-flag="es">🇪🇸 +34 (Spain)</div>
+                                <div class="dropdown-item" data-code="+39" data-flag="it">🇮🇹 +39 (Italy)</div>
+                                <div class="dropdown-item" data-code="+82" data-flag="kr">🇰🇷 +82 (South Korea)</div>
+                                <div class="dropdown-item" data-code="+92" data-flag="pk">🇵🇰 +92 (Pakistan)</div>
+                                <div class="dropdown-item" data-code="+62" data-flag="id">🇮🇩 +62 (Indonesia)</div>
+                                <div class="dropdown-item" data-code="+966" data-flag="sa">🇸🇦 +966 (Saudi Arabia)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="tel" id="phone_number" name="phone_number" placeholder="Enter phone number" required>
+                    <input type="hidden" id="country_code" name="country_code" value="+1">
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="match_date">Match Date</label>
+                <input type="date" id="match_date" name="match_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="match_time">Match Time</label>
+                <input type="time" id="match_time" name="match_time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <select id="location" name="location" required>
+                    <option value="">Select Location</option>
+                    <option value="stadium_1">ABC</option>
+                    <option value="stadium_2">XYZ</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Book Court</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="customModal" class="modal-overlay">
+        <div class="modal-box">
+          <p id="modalMessage"></p>
+          <button id="closeModalBtn">Close</button>
+        </div>
+      </div>      
+
+	<footer>
+        <p>&copy; 2025 Website_Name. All Rights Reserved.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

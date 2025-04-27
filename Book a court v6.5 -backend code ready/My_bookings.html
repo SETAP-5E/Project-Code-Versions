@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Bookings</title>
+  <link rel="stylesheet" href="My_bookings.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Main Page</a></li>
+        <li><a href="Friends.html">Friends</a></li>
+        <li><a href="Book_a_court.html">Book a Court</a></li>
+        <li><a href="History_matches.html">History Matches</a></li>
+        <li><a href="Profile.html">Profile</a></li>
+        <li><a href="Match_making.html">Matchmaking</a></li>
+        <li><a href="My_Bookings.html">My Bookings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>My Bookings</h1>
+
+  <div class="filters">
+    <label for="filterDate">Filter by Date:</label>
+    <input type="date" id="filterDate" />
+
+    <label for="filterCourt">Filter by Court Name:</label>
+    <input type="text" id="filterCourt" placeholder="Enter court name">
+    
+    <button id="searchBookingsBtn">Search</button>
+    <button id="resetBookingsBtn">Reset</button>
+    
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Court Name</th>
+        <th>Location</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="bookingsTable">
+      <tr>
+        <td>2025-04-24</td>
+        <td>16:00</td>
+        <td>ABC Court</td>
+        <td>Doha</td>
+        <td>
+          <button onclick="editBooking(1)">Edit</button>
+          <button onclick="cancelBooking(1)">Cancel</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2025-05-01</td>
+        <td>18:00</td>
+        <td>XYZ Court</td>
+        <td>Beirut</td>
+        <td>
+          <button onclick="editBooking(2)">Edit</button>
+          <button onclick="cancelBooking(2)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="Navigator">
+    <label for="rowCount">Show Rows:</label>
+    <select id="rowCount" onchange="updateTable()">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="all">All</option>
+    </select>
+
+    <div class="pagination">
+      <button onclick="prevPage()">&#8592; Previous</button>
+      <span id="pageInfo">Page 1</span>
+      <button onclick="nextPage()">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="customModal" class="modal-overlay">
+    <div class="modal-box">
+      <p id="modalMessage"></p>
+      <form id="editBookingForm" style="display: none;">
+        <input type="hidden" id="editBookingId" />
+      
+        <label>Date:
+          <input type="date" id="editDate" required />
+        </label>
+      
+        <label>Time:
+          <input type="time" id="editTime" required />
+        </label>
+      
+        <label>Court:
+          <select id="editCourt" required>
+            <option value="">-- Select Court --</option>
+            <option value="ABC Court">ABC Court</option>
+            <option value="XYZ Court">XYZ Court</option>
+            <option value="Elite Arena">Elite Arena</option>
+          </select>
+        </label>
+      
+        <label>Location:
+          <select id="editLocation" required>
+            <option value="">-- Select Location --</option>
+            <option value="Doha">Doha</option>
+            <option value="UK">UK</option>
+            <option value="City">City</option>
+          </select>
+        </label>
+      </form>
+      
+      <div id="modalActions" class="modal-buttons"></div>
+      <button id="closeModalBtn">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Website_Name. All Rights Reserved.</p>
+  </footer>
+  <script src="My_bookings.js"></script>
+</body>
+</html>
