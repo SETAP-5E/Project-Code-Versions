@@ -1,0 +1,40 @@
+// my vm
+//working
+/get player_id
+curl -X POST http://34.60.207.249:3000/api/get_player -H "Content-Type: application/json" -d "{\"player_id\":1}"
+
+/insert into all of the player
+curl -X POST http://34.60.207.249:3000/api/insert_player -H "Content-Type: application/json" -d "{"player_name":"sam" , " player_email":"sam@gmail.com" , "player_gender":"M"}"
+
+/DELETE from player_id
+curl -X POST http://34.60.207.249:3000/api/delete_player -H "Content-Type: application/json" -d "{\"player_id\":1}"
+
+/reset player TABLE
+curl -X POST http://34.60.207.249:3000/api/reset_player
+
+/get court id
+curl -X GET http://34.60.207.249:3000/api/get_court -H "Content-Type: application/json" -d "{\"court_id\":1}"
+
+/get location
+curl -X POST http://34.60.207.249:3000/api/get_location -H "Content-Type: application/json" -d "{\"court_location\":me16 14ae}"
+
+/get description
+curl -X POST http://34.60.207.249:3000/api/get_description -H "Content-Type: application/json" -d "{\"court_description\":on the right under the tree}"
+
+/insert court location and description
+curl -X POST http://34.60.207.249:3000/api/get_court -H "Content-Type: application/json" -d "{\court_loation\":"" , \"court_description\":}"
+
+/inser both date and time 
+curl -X POST http://34.60.207.249:3000/api/insert_bookings -H "Content-Type: application/json" -d "{\booking_date\" , \"booking_time\":}"
+
+/insert match date 
+curl -X POST http://34.60.207.249:3000/api/insert_bookings -H "Content-Type: application/json" -d "{\booking_date\":}"
+
+/insert match time
+curl -X POST http://34.60.207.249:3000/api/insert_bookings -H "Content-Type: application/json" -d "{\booking_time\":}"
+
+/get booking id
+curl -X POST http://34.60.207.249:3000/api/get_bookings -H "Content-Type: application/json" -d "{\booking_id\":}"
+
+/get wins
+curl -X POST http://34.60.207.249:3000/api/get_bookings -H "Content-Type: application/json" -d "{\wins\":}"
